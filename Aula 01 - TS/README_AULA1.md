@@ -74,34 +74,7 @@ const log = (message: string): void => {
 
 ```
 
----
 
-## 🔹 Laço de Repetição – while
-Executa instruções **enquanto uma condição for verdadeira**.
-
-```Javascript
-let contador:number = 0
-while(contador < 5):
-    console.log(`Contador vale ${contador}`)
-    contador ++
-```
-
-➡️ **Observação importante:** loops `while True` rodam infinitamente até um `break` ou interrupção manual (`Ctrl+C`).
-
----
-
-
-## 📝 Atividades Práticas
-1. Classificar pessoa pela idade (criança, adolescente, adulto, idoso).  
-2. Ler três números e informar o maior e o menor.  
-3. Pedir 10 números e contar pares vs ímpares.  
-4. Calcular média de idades de uma turma e classificar como jovem, adulta ou idosa.  
-5. Ler N números e determinar menor, maior e soma.
-
-➡️ **Desafio:** criar um gerenciador de compras que calcule:
-- Total gasto,  
-- Quantos produtos custam mais de R$1000,  
-- Nome do produto mais barato.  
 
 ---
 
