@@ -1,0 +1,136 @@
+# Aula 02- Tipagem em Arrays, Objetos e Funções em TypeScript:
+
+## 📌 Conteúdo da aula:
+1. **Exercicío de fixação da aula 01**  
+2. **O que são arrays/arrays em Typsecript**  
+3. **Tuplas em Typescript**  
+4. **Exercicío para praticarmos a sintaxe de listas: **  
+5. **Objetos em Javascript.**  
+6. **Interfaces TypeScript**
+
+---
+
+## 🔹 Exercicío Fixação da aula 01: 
+#Conserte a função e retorne ela no console:
+```javascript
+function normalizarTexto(texto){
+	return texto.trims().toLowercase();
+}
+```
+
+##Crie uma função chamada apresentarPessoa que:
+
+1. receba os três parâmetros acima (com os tipos corretos)
+2. retorne uma string formatada, por exemplo:"Olá, meu nome é Lucas, tenho 25 anos e sou aluno: true"
+
+
+## 🔹 Arrays em TS:
+
+Como todos sabem, arrays são estruturas de dados para que sejam armazenadas diversas informações, sejam elas númericas, strings, 
+booleanas e etc. No TypeScript, nós podemos tipar os dados que iremos receber nesses arrays, como por exemplo, um array somente de strings ou de números:
+
+```javascript
+#Esse é o modo mais utilizado de tipagem de array em TypeScript:
+const listaNomes: string[] = ['Lucas', 'Paulo', 'Pedro', 'etc']
+const listaNumeros: number[] = [25, 20, 18, 15]
+const listaAtivos: boolean[] = [true, false, true, false]
+
+#Temos também uma outra forma de tipar esses Arrays que seria com a estrutura de Generics que iremos ver mais a frente nas demais aulas:
+const listaNomes: Array<string> = ['Lucas', 'Paulo', 'Pedro', 'etc']
+const listaNumeros: Array<number> = [25, 20, 18, 15]
+const listaAtivos:Array<boolean> = [true, false, true, false]
+```
+Realizando a tipagem dessa maneira, nós temos a segurança de que iremos receber somente um tipo de dados no array, evitando assim quebra de informações e facilitando a iteração sobre cada um.
+Configuração:
+## Tuplas em TS:
+Falando também sobre segurança de dados, no TypeScript nós temos as Tuples, que são arrays com tamanhos específicos e posicionamento de tipos na ordem que desejamos,
+elas possuem uma sintaxe parecida com arrays, mas com uma característica de segurança  bem bacana:
+
+```javascript
+const tuplaUsuarios: [string, number][] = [['Lucas', 25], ['Pedro', 30]] #Criando um array de tuplas
+const tuplaUsuario: [string, number] = ['Lucas', 25] #Criando uma tupla única
+
+  # Se tentarmos alterar algum dos dados, somente irá ser possível alterar para o tipo específico, por exemplo tuplaUsuario[0] = "Junior"
+se tentarmos colocar um number, ele irá gerar um erro de type, e se tentarmos colocar mais do que a quantidade passada, ele irá gerar erro de quantidade!
+
+```
+## Exercicío para praticarmos a sintaxe de listas:
+-  Crie arrays para armazenar cada tipo de dado, um de string, number e boolean;
+- Crie um array vazio onde iremos ter uma função responsável por adicionar um elemento nesse array;
+- Crie um array que possa armazenar números OU strings, mas nunca booleanos;
+
+➡️ ## Tipagem de objetos em Typescript:
+**O que são objetos em JS? Objetos em Javascript é a forma em que conseguimos montar uma estrutura com características próprias, por exemplo
+colocando campos como nome, idade, turma. Assim tornando o que antes tinhamos no array a ''bagunça'' de informações, agora temos algo organizado.**
+
+➡️## OBJETOS NO TYPESCRIPT(Interfaces):
+**No TypeScript, podemos criar Interfaces para definir um 'contrato' ou a 'forma' exata que um objeto deve possuir.
+Esse contrato garante que qualquer objeto que utilize a interface tenha as propriedades (e os tipos delas) e os métodos (funções) que nós definimos. Podemos deixar essas propriedades como obrigatórias, opcionais ou somente leitura.**
+
+```javascript
+interface Usuario {
+	nome: string
+	idade: number
+	turma: string
+	dataNascimento?: string
+
+	saudar(mensagem: string): void;
+}
+
+const usuarioNovo: Usuario = {
+	#apertando ctrl + espaço os campos aparecem automaticamente
+	nome: "Lucas",
+	idade: 25,
+	turma: "b",
+	saudar(mensagem: string):void{
+		console.log(`Olá ${this.nome}, Mensagem: ${mensagem}`)
+
+usuarioNovo.saudar("Bem vindo")
+	#Se colocarmos algum dos campos com tipos diferentes dos solicitados, o TypeScript irá gerar um erro de assinalização de tipo.
+}
+```
+
+**Podemos também ter uma lista de interfaces, por exemplo para criarmos um sistema onde iremos armazenar informações sobre diversos usuários, nesse caso gostariamos de criar uma lista para armazenar essa informações, correto?**
+
+```javascript
+interface Contato{
+	tipo: "email" | "instagram" | "telefone"
+	valor: string
+}
+interface Usuario{
+	nome: string
+	idade: number
+	contatos: Contato[]
+	}
+
+const listaUsuarios: Usuario[] = [
+	{ #ctrl + barra irá automaticamente mostrar os campos que iremos ter
+			nome: "Lucas",
+			idade: 25,
+			contatos: [
+				{"tipo": "email", "valor": "fulano@gmail.com"},
+				{"tipo": "telefone", "valor": "fulano@gmail.com"}]
+		},
+		{ #ctrl + barra irá automaticamente mostrar os campos que iremos ter
+			nome: "Nay",
+			idade: 26,
+			contatos: [
+				{"tipo": "email", "valor": "fulano@gmail.com"},
+				{"tipo": "telefone", "valor": "fulano@gmail.com"}]
+		},
+]
+
+```
+
+##Dessa forma podemos criar uma lista com diversos usuários e informações pertinentes aos mesmos, e até mesmo aplicar um laço for por exemplo para podermos coletar informações ou utilizar por exemplo métodos como o saudar().
+
+---
+
+## 📚 Dicas de Aprendizado
+- Explore e teste livremente seu código.  
+- Pergunte “por quê?” para entender a lógica.  
+- Revise e ensine a alguém (ótima forma de aprender).  
+- Pratique! Quanto mais exercícios, mais natural será programar.  
+
+---
+
