@@ -11,7 +11,7 @@
 ---
 
 ## 🔹 Exercicío Fixação da aula 01: 
-#Conserte a função e retorne ela no console:
+##Conserte a função e retorne ela no console:
 ```javascript
 function normalizarTexto(texto){
 	return texto.trims().toLowercase();
@@ -30,12 +30,12 @@ Como todos sabem, arrays são estruturas de dados para que sejam armazenadas div
 booleanas e etc. No TypeScript, nós podemos tipar os dados que iremos receber nesses arrays, como por exemplo, um array somente de strings ou de números:
 
 ```javascript
-#Esse é o modo mais utilizado de tipagem de array em TypeScript:
+//Esse é o modo mais utilizado de tipagem de array em TypeScript:
 const listaNomes: string[] = ['Lucas', 'Paulo', 'Pedro', 'etc']
 const listaNumeros: number[] = [25, 20, 18, 15]
 const listaAtivos: boolean[] = [true, false, true, false]
 
-#Temos também uma outra forma de tipar esses Arrays que seria com a estrutura de Generics que iremos ver mais a frente nas demais aulas:
+//Temos também uma outra forma de tipar esses Arrays que seria com a estrutura de Generics que iremos ver mais a frente nas demais aulas:
 const listaNomes: Array<string> = ['Lucas', 'Paulo', 'Pedro', 'etc']
 const listaNumeros: Array<number> = [25, 20, 18, 15]
 const listaAtivos:Array<boolean> = [true, false, true, false]
@@ -50,7 +50,7 @@ elas possuem uma sintaxe parecida com arrays, mas com uma característica de seg
 const tuplaUsuarios: [string, number][] = [['Lucas', 25], ['Pedro', 30]] #Criando um array de tuplas
 const tuplaUsuario: [string, number] = ['Lucas', 25] #Criando uma tupla única
 
-  # Se tentarmos alterar algum dos dados, somente irá ser possível alterar para o tipo específico, por exemplo tuplaUsuario[0] = "Junior"
+  //Se tentarmos alterar algum dos dados, somente irá ser possível alterar para o tipo específico, por exemplo tuplaUsuario[0] = "Junior"
 se tentarmos colocar um number, ele irá gerar um erro de type, e se tentarmos colocar mais do que a quantidade passada, ele irá gerar erro de quantidade!
 
 ```
@@ -86,7 +86,7 @@ const usuarioNovo: Usuario = {
 		console.log(`Olá ${this.nome}, Mensagem: ${mensagem}`)
 
 usuarioNovo.saudar("Bem vindo")
-	#Se colocarmos algum dos campos com tipos diferentes dos solicitados, o TypeScript irá gerar um erro de assinalização de tipo.
+	//Se colocarmos algum dos campos com tipos diferentes dos solicitados, o TypeScript irá gerar um erro de assinalização de tipo.
 }
 ```
 
@@ -104,14 +104,14 @@ interface Usuario{
 	}
 
 const listaUsuarios: Usuario[] = [
-	{ #ctrl + barra irá automaticamente mostrar os campos que iremos ter
+	{ //ctrl + barra irá automaticamente mostrar os campos que iremos ter
 			nome: "Lucas",
 			idade: 25,
 			contatos: [
 				{"tipo": "email", "valor": "fulano@gmail.com"},
 				{"tipo": "telefone", "valor": "fulano@gmail.com"}]
 		},
-		{ #ctrl + barra irá automaticamente mostrar os campos que iremos ter
+		{ //ctrl + barra irá automaticamente mostrar os campos que iremos ter
 			nome: "Nay",
 			idade: 26,
 			contatos: [
